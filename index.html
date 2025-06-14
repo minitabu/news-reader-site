@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ニュース読み上げ速報</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon-192.png" type="image/png" />
+</head>
+<body>
+  <h1>📰 <span>ニュース読み上げ速報</span>
+    <button id="toggleTheme" title="テーマ切替">🌗</button>
+  </h1>
+
+  <div class="controls">
+    <label for="language">🌐 言語:</label>
+    <select id="language">
+      <option value="ja-JP">🇯🇵 日本語</option>
+      <option value="en-US">🇺🇸 English</option>
+    </select>
+  </div>
+
+  <div class="controls">
+    <select id="source"></select>
+    <input type="text" id="keyword" placeholder="🔍 キーワード（任意）" />
+    <button id="load">📡 ニュース取得</button>
+  </div>
+
+  <div class="controls">
+    <label for="rate">🔊 読み上げ速度</label>
+    <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" />
+    <span id="rateValue">1.0x</span>
+    <button id="startSpeech">▶️ 開始</button>
+    <button id="pauseSpeech">⏸️ 一時停止</button>
+    <button id="resumeSpeech">🔁 再開</button>
+  </div>
+
+  <ul id="newsList"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
